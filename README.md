@@ -7,6 +7,7 @@
 <!-- codecov https://codecov.io/gh -->
 <!-- npm version badge: https://badge.fury.io/ -->
 
+*note: wip*  
 If you are building a simple application, let's enjoy using sweetpack!  
 sweetpack hides all common settings and you are not taking the time to write the configuration.
 
