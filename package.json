@@ -1,0 +1,69 @@
+{
+  "name": "sweetpack",
+  "author": "abouthiroppy <git@about-hiroppy.com http://about-hiroppy.com",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "a simple version of webpack",
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "keywords": [
+    "webpack",
+    "babel",
+    "easy"
+  ],
+  "repository": {
+    "url": "git+https://github.com/abouthiroppy/sweetpack.git",
+    "type": "git"
+  },
+  "bin": {
+    "sweetpack": "bin/index.js"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "lint": "eslint .",
+    "test": "nyc ava",
+    "test:watch": "nyc ava -w",
+    "postcover": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "tap": true,
+    "failFast": true,
+    "concurrency": 5
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "chalk": "^2.1.0",
+    "css-loader": "^0.28.7",
+    "file-loader": "^0.11.2",
+    "findup-sync": "^2.0.0",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-merge": "^4.1.0",
+    "yamljs": "^0.3.0",
+    "yargs": "^8.0.2"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "conventional-changelog-cli": "^1.3.3",
+    "eslint": "^4.6.0",
+    "eslint-config-sky": "^1.6.2",
+    "nyc": "^11.1.0",
+    "pify": "^3.0.0"
+  }
+}
