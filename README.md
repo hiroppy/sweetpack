@@ -18,7 +18,18 @@ $ npm install sweetpack --save-dev
 
 ## Usage
 ```
-$ sweetpack <command> <options>
+$ npx sweetpack <command> <options>
+```
+
+Recommend to write to package.json as tasks.
+
+```json
+{
+  "scripts": {
+    "watch": "sweetpack watch",
+    "build": "NODE_ENV=production sweetpack build"
+  }
+}
 ```
 
 ## Command
