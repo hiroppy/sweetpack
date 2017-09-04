@@ -39,7 +39,7 @@ Create `.sweetpack.yml` as an init file.
 $ sweetpack init
 ```
 
-```yml
+```yaml
 entry: src/index.js
 output: dist
 react: false
@@ -81,7 +81,7 @@ $ sweetpack watch --display-setting-file
 ## Setting File
 File name is `.sweetpack.yml`.
 
-```yml
+```yaml
 entry: ./lib/index.js
 output: ./dist
 react: true
@@ -89,6 +89,13 @@ react: true
 
 ### Entry
 ### Output
+`output` has the same meaning as `webpack.output.path`.   
+If you specify a file name, sweetpack automatically decomposes it into `path` and `filename`.   
+e.g. 
+```yaml
+output: ./dist/bundle.js
+```
+
 ### React
 Default is `false`.   
 If you select `true`, babel-preset-react will be valid.
