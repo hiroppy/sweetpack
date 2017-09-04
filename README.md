@@ -20,7 +20,7 @@ $ npm install sweetpack --save-dev
 $ npx sweetpack <command> <options>
 ```
 
-Recommend to write to package.json as tasks.
+Recommend to write to package.json as a task.
 
 ```json
 {
@@ -33,7 +33,7 @@ Recommend to write to package.json as tasks.
 
 ## Command
 ### Init
-Create .sweetpack.yml as init file.
+Create `.sweetpack.yml` as an init file.
 
 ```
 $ sweetpack init
@@ -52,6 +52,7 @@ $ sweetpack watch
 ```
 
 ### Build
+Use babel-minify-webpack-plugin.  
 ```
 $ NODE_ENV=production sweetpack build
 ```
