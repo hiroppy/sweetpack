@@ -3,10 +3,13 @@
 'use strict';
 
 const path = require('path');
+const yargs = require('yargs');
 const packageJson = require('../package.json');
 
-require('yargs')
+yargs
   .usage(`
+    Version: ${packageJson.version}
+
     Default setting when not creating .sweetpack.yml
 
     entry : ${path.join('.', 'src', 'index.js')}
@@ -32,6 +35,6 @@ require('yargs')
   .help()
   .argv;
 
-const _ = require('yargs').argv._;
+const _ = yargs.argv._;
 
 if (_.length === 1) require('../lib/process')(_[0]);
