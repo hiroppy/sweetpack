@@ -23,8 +23,15 @@ $ sweetpack <command> <options>
 
 ## Command
 ### Init
+Create .sweetpack.yml as init file.
+
 ```
 $ sweetpack init
+```
+
+```yml
+entry: src/index.js
+output: dist
 ```
 
 ### Watch
