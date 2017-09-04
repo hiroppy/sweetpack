@@ -42,6 +42,7 @@ $ sweetpack init
 ```yml
 entry: src/index.js
 output: dist
+react: false
 ```
 
 ### Watch
@@ -80,9 +81,13 @@ $ sweetpack watch --display-setting-file
 File name is `.sweetpack.yml`.
 
 ```yml
-entry:
-  ./lib/index.js
-output:
-  ./dist
+entry: ./lib/index.js
+output: ./dist
 react: true
 ```
+
+### Entry
+### Output
+### React
+Default is `false`.   
+If you select `true`, babel-preset-react will be valid.
