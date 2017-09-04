@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/abouthiroppy/sweetpack.svg)](https://travis-ci.org/abouthiroppy/sweetpack)
 [![npm version](https://badge.fury.io/js/sweetpack.svg)](https://badge.fury.io/js/sweetpack)
-<!-- codecov https://codecov.io/gh -->
+[![codecov](https://codecov.io/gh/abouthiroppy/sweetpack/branch/master/graph/badge.svg)](https://codecov.io/gh/abouthiroppy/sweetpack)
 
 *note: wip*  
 If you are building a simple application, let's enjoy using sweetpack!  
