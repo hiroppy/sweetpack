@@ -2,10 +2,9 @@
   <h1>sweetpack</h1>
 </div>
 
-<!-- travis https://travis-ci.org/ -->
-<!-- appveyor https://ci.appveyor.com -->
+[![Build Status](https://travis-ci.org/abouthiroppy/sweetpack.svg)](https://travis-ci.org/abouthiroppy/sweetpack)
+[![npm version](https://badge.fury.io/js/sweetpack.svg)](https://badge.fury.io/js/sweetpack)
 <!-- codecov https://codecov.io/gh -->
-<!-- npm version badge: https://badge.fury.io/ -->
 
 *note: wip*  
 If you are building a simple application, let's enjoy using sweetpack!  
