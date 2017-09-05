@@ -2,7 +2,6 @@
 
 'use strict';
 
-const path = require('path');
 const yargs = require('yargs');
 const { convertYml } = require('../lib/setting-file');
 const packageJson = require('../package.json');

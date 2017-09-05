@@ -1,0 +1,5 @@
+entry:
+  - ./lib/index.js
+  - ./lib/a.js
+  - ./lib/b.js
+output: dist/bundle.js
