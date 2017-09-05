@@ -4,6 +4,7 @@
 
 const path = require('path');
 const yargs = require('yargs');
+const { convertYml } = require('../lib/setting-file');
 const packageJson = require('../package.json');
 
 yargs
@@ -12,8 +13,7 @@ yargs
 
     Default setting when not creating .sweetpack.yml
 
-    entry : ${path.join('.', 'src', 'index.js')}
-    output: ${path.join('.', 'dist')}
+${convertYml()}
   `)
   .command({
     command: 'watch',
