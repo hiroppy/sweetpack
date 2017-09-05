@@ -15,6 +15,10 @@ sweetpack hides all common settings and you are not taking the time to write the
 $ npm install sweetpack --save-dev
 ```
 
+## Sample
+- [common](./samples/common)
+- [react + css-modules + postcss-loader](./samples/react)
+
 ## Usage
 ```
 $ npx sweetpack <command> <options>
@@ -160,6 +164,3 @@ If you select `true`, added postcss-loader to `module.rules`.
 | Type | Default |
 | :--- | :---: |
 | string | undefined |
-
-## Sample
-wip
