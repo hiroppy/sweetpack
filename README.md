@@ -82,13 +82,16 @@ $ sweetpack watch --display-setting-file
 File name is `.sweetpack.yml`.
 
 ```yaml
-entry: ./lib/index.js
+entry: ./src/index.js
 output: ./dist
-react: true
+js:
+  react: true
+css:
+  module: false
 ```
 
-### Entry
-### Output
+### entry(string, default: `./src/index.js`)
+### output(string, default: `./dist`)
 `output` has the same meaning as `webpack.output.path`.   
 If you specify a file name, sweetpack automatically decomposes it into `path` and `filename`.   
 e.g. 
@@ -96,6 +99,10 @@ e.g.
 output: ./dist/bundle.js
 ```
 
-### React
-Default is `false`.   
+### js
+#### react(boolean, default: `false`)
 If you select `true`, babel-preset-react will be valid.
+
+### css
+#### module(boolean, default: `false`)
+If you select `true`, added module option to css-loader.
