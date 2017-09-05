@@ -42,7 +42,10 @@ $ sweetpack init
 ```yaml
 entry: src/index.js
 output: dist
-react: false
+js:
+  react: false
+css:
+  module: false
 ```
 
 ### Watch
