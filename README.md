@@ -6,18 +6,18 @@
 [![npm version](https://badge.fury.io/js/sweetpack.svg)](https://badge.fury.io/js/sweetpack)
 [![codecov](https://codecov.io/gh/abouthiroppy/sweetpack/branch/master/graph/badge.svg)](https://codecov.io/gh/abouthiroppy/sweetpack)
 
-*note: wip*  
 If you are building a simple application, let's enjoy using sweetpack!  
-sweetpack hides all common settings and you are not taking the time to write the configuration.
+sweetpack hides all common settings of webpack and babel, you are not taking the time to write the configuration.
+
+## Sample
+- [common](./samples/common)
+- [react + css-modules + postcss-loader](./samples/react)
+
 
 ## Install
 ```
 $ npm install sweetpack --save-dev
 ```
-
-## Sample
-- [common](./samples/common)
-- [react + css-modules + postcss-loader](./samples/react)
 
 ## Usage
 ```
@@ -108,6 +108,8 @@ html:
   filename: null
   template: null
 ```
+
+If the configuration file can not be found, the above default setting is reflected.
 
 ### entry
 | Type | Default |
