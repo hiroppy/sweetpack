@@ -25,7 +25,7 @@ Recommend to write to package.json as a task.
 ```json
 {
   "scripts": {
-    "watch": "sweetpack watch",
+    "start": "sweetpack watch",
     "build": "NODE_ENV=production sweetpack build"
   }
 }
