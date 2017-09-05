@@ -59,20 +59,19 @@ $ sweetpack watch
 ```
 
 ### Build
-Use babel-minify-webpack-plugin.  
 ```
 $ NODE_ENV=production sweetpack build
 ```
+Use babel-minify-webpack-plugin.   
+Asset files is converted to name with hash.  
 
 ## Options
 ### Display Setting File
-`--display-setting-file`
-
 ```
 $ sweetpack watch --display-setting-file
 ```
 
-## Default Packages
+## Packages Included
 ### webpack
 - webpack
 - webpack-dev-server(only watch mode)
@@ -88,7 +87,6 @@ $ sweetpack watch --display-setting-file
 - babel-preset-stage-1
 - babel-preset-react(default: false)
 - babel-polyfill(default: false)
-
 
 ## Setting File
 File name is `.sweetpack.yml`.
