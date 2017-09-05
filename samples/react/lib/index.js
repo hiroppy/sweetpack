@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './style.css';
 
-console.log(styles);
-const rootEl = document.getElementById('root');
+const rootEl = document.createElement('div');
+document.body.append(rootEl);
 
 const Sample = () => (
   <h1 className={styles.title}>sample</h1>

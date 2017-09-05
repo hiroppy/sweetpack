@@ -1,2 +1,10 @@
 entry: ./lib/index.js
 output: dist/bundle.js
+js:
+    react: false
+css:
+    module: false
+    postcss: false
+html:
+    filename: null
+    template: null

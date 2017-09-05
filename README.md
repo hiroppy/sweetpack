@@ -47,6 +47,9 @@ js:
 css:
   module: false
   postcss: false
+html:
+  filename: null
+  template: null
 ```
 
 ### Watch
@@ -70,17 +73,22 @@ $ sweetpack watch --display-setting-file
 ```
 
 ## Default Packages
+### webpack
 - webpack
 - webpack-dev-server(only watch mode)
 - babel-minify-webpack-plugin(only production mode)
+- file-loader
+- style-loader
+- css-loader
+- postcss-loader(default: false)
+- html-webpack-plugin
+
+### babel
 - babel-preset-env
 - babel-preset-stage-1
 - babel-preset-react(default: false)
 - babel-polyfill(default: false)
-- file-loader
-- style-loader
-- css-loader
-- postcss-loader
+
 
 ## Setting File
 File name is `.sweetpack.yml`.
@@ -93,25 +101,66 @@ js:
 css:
   module: false
   postcss: false
+html:
+  filename: null
+  template: null
 ```
 
-### entry(string, default: `./src/index.js`)
-### output(string, default: `./dist`)
+### entry
+| Type | Default |
+| :--- | :---: |
+| string | `./src/index.js` |
+
+### output
+| Type | Default |
+| :--- | :---: |
+| string | `./dist` |
+
 `output` has the same meaning as `webpack.output.path`.   
 If you specify a file name, sweetpack automatically decomposes it into `path` and `filename`.   
+
 e.g.
 ```yaml
 output: ./dist/bundle.js
 ```
 
 ### js
-#### react(boolean, default: `false`)
+#### react
+| Type | Default |
+| :--- | :---: |
+| boolean | false |
+
 If you select `true`, babel-preset-react will be valid.
 
 ### css
-#### module(boolean, default: `false`)
-If you select `true`, add module option to css-loader.
+#### module
+| Type | Default |
+| :--- | :---: |
+| boolean | false |
 
-### postcss(boolean, default: `false`)
+If you select `true`, add module option to css-loader.  
+Output class name will be changed.  
+development, test, etc... : `[path]__[name]__[local]__[hash:base64:5]`  
+production: `[hash:base64:5]`
+
+### postcss
+| Type | Default |
+| :--- | :---: |
+| boolean | false |
+
 If you select `true`, added postcss-loader to `module.rules`.
 
+### html
+#### filename
+| Type | Default |
+| :--- | :---: |
+| string | undefined |
+
+
+#### template
+| Type | Default |
+| :--- | :---: |
+| string | undefined |
+
+## Sample
+wip
