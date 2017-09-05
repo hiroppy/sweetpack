@@ -4,3 +4,4 @@ js:
   react: true
 css:
   module: true
+  postcss: false

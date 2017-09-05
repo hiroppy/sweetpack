@@ -46,6 +46,7 @@ js:
   react: false
 css:
   module: false
+  postcss: false
 ```
 
 ### Watch
@@ -88,16 +89,17 @@ File name is `.sweetpack.yml`.
 entry: ./src/index.js
 output: ./dist
 js:
-  react: true
+  react: false
 css:
   module: false
+  postcss: false
 ```
 
 ### entry(string, default: `./src/index.js`)
 ### output(string, default: `./dist`)
 `output` has the same meaning as `webpack.output.path`.   
 If you specify a file name, sweetpack automatically decomposes it into `path` and `filename`.   
-e.g. 
+e.g.
 ```yaml
 output: ./dist/bundle.js
 ```
@@ -108,4 +110,8 @@ If you select `true`, babel-preset-react will be valid.
 
 ### css
 #### module(boolean, default: `false`)
-If you select `true`, added module option to css-loader.
+If you select `true`, add module option to css-loader.
+
+### postcss(boolean, default: `false`)
+If you select `true`, added postcss-loader to `module.rules`.
+
