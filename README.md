@@ -53,7 +53,8 @@ html:
 ```
 
 ### Watch
-Start with webpack-dev-server.
+Start with webpack-dev-server.  
+Hot Module Replacement enabled.  
 ```
 $ sweetpack watch
 ```
