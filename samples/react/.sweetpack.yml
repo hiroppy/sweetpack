@@ -1,3 +1,4 @@
 entry: ./lib/index.js
 output: dist
-react: true
+js:
+  react: true
