@@ -41,10 +41,6 @@ Recommend to write to package.json as a task.
 ### Init
 Create `.sweetpack.yml` as an init file.
 
-```
-$ sweetpack init
-```
-
 ```yaml
 entry: src/index.js
 output: dist
@@ -61,14 +57,8 @@ html:
 ### Watch
 Start with webpack-dev-server.  
 Hot Module Replacement enabled.  
-```
-$ sweetpack watch
-```
 
 ### Build
-```
-$ NODE_ENV=production sweetpack build
-```
 Use babel-minify-webpack-plugin.   
 Asset files is converted to name with hash.  
 
@@ -116,7 +106,11 @@ If the configuration file can not be found, the above default setting is reflect
 ### entry
 | Type | Default |
 | :--- | :---: |
-| string | `./src/index.js` |
+| string &#124; Object &#124; Array&lt;string&gt; | `./src/index.js` |
+
+It can be set just like webpack.  
+If you want to bundle multiple files, please refer to [Sample](./samples).
+
 
 ### output
 | Type | Default |
@@ -145,7 +139,8 @@ If you select `true`, babel-preset-react will be valid.
 | :--- | :---: |
 | boolean | false |
 
-If you select `true`, add module option to css-loader.  
+If you select `true`, add module option to css-loader.
+
 Output class name will be changed.  
 development, test, etc... : `[path]__[name]__[local]__[hash:base64:5]`  
 production: `[hash:base64:5]`
@@ -158,13 +153,15 @@ production: `[hash:base64:5]`
 If you select `true`, added postcss-loader to `module.rules`.
 
 ### html
+Uses [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
+
 #### filename
 | Type | Default |
 | :--- | :---: |
-| string | undefined |
+| string | null |
 
 
 #### template
 | Type | Default |
 | :--- | :---: |
-| string | undefined |
+| string | null |
