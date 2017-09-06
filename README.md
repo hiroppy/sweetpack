@@ -154,7 +154,8 @@ production: `[hash:base64:5]`
 | :--- | :---: |
 | boolean | false |
 
-If you select `true`, added postcss-loader to `module.rules`.
+If you select `true`, added postcss-loader to `module.rules`.  
+Please add `postcss.config.js` to your project.
 
 ### html
 Uses [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
