@@ -78,18 +78,18 @@ test('js.react is true - prod', (t) => {
   }));
 });
 
-test('css.module is true - dev', (t) => {
+test('css.modules is true - dev', (t) => {
   t.snapshot(webpack.createDev({
     css: {
-      module: true
+      modules: true
     }
   }));
 });
 
-test('css.module is true - prod', (t) => {
+test('css.modules is true - prod', (t) => {
   t.snapshot(webpack.createProd({
     css: {
-      module: true
+      modules: true
     }
   }));
 });

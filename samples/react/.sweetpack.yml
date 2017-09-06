@@ -3,5 +3,5 @@ output: dist
 js:
   react: true
 css:
-  module: true
+  modules: true
   postcss: false

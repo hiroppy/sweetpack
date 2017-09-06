@@ -47,7 +47,7 @@ output: dist
 js:
   react: false
 css:
-  module: false
+  modules: false
   postcss: false
 html:
   filename: null
@@ -95,7 +95,7 @@ output: ./dist
 js:
   react: false
 css:
-  module: false
+  modules: false
   postcss: false
 html:
   filename: null
@@ -136,7 +136,7 @@ If you select `true`, babel-preset-react and react-hot-loader will be valid.
 Please install `react`, `react-dom`, `react-hot-loader@next`.
 
 ### css
-#### module
+#### modules
 | Type | Default |
 | :--- | :---: |
 | boolean | false |
