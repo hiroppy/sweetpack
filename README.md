@@ -6,7 +6,9 @@
 [![npm version](https://badge.fury.io/js/sweetpack.svg)](https://badge.fury.io/js/sweetpack)
 [![codecov](https://codecov.io/gh/abouthiroppy/sweetpack/branch/master/graph/badge.svg)](https://codecov.io/gh/abouthiroppy/sweetpack)
 
-If you are building a simple application, let's enjoy using sweetpack!  
+## What's sweetpack?
+sweetpack helps you build your environment of webpack and babel.   
+If you are building a simple application, let's enjoy using sweetpack!   
 sweetpack hides all common settings of webpack and babel, you are not taking the time to write the configuration.
 
 ## Sample
