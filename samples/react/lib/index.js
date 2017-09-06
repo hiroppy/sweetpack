@@ -1,17 +1,24 @@
 import React from 'react';
+import { AppContainer } from 'react-hot-loader';
 import ReactDOM from 'react-dom';
-import styles from './style.css';
+import App from './App';
 
 const rootEl = document.createElement('div');
 document.body.append(rootEl);
 
-const Sample = () => (
-  <h1 className={styles.title}>sample</h1>
-);
+const render = () => {
+  ReactDOM.render(
+    <AppContainer>
+      <App />
+    </AppContainer>,
+    rootEl
+  );
+};
 
-ReactDOM.render(
-  <div>
-    <Sample />
-  </div>,
-  rootEl
-);
+render();
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render();
+  });
+}

@@ -11,7 +11,7 @@ sweetpack hides all common settings of webpack and babel, you are not taking the
 
 ## Sample
 - [common](./samples/common)
-- [react + css-modules + postcss-loader](./samples/react)
+- [react + react-hot-loader + css-modules + postcss-loader](./samples/react)
 - multi
   - [3 input files -> 1 output file](./samples/multi-0)
   - [3 input files -> 3 output files](./samples/multi-1)
@@ -78,6 +78,7 @@ $ sweetpack watch --display-setting-file
 - css-loader
 - postcss-loader(default: false)
 - html-webpack-plugin
+- react-hot-loader(default: false, becomes effective when `js.react` is `true`)
 
 ### babel
 - babel-preset-env
@@ -131,7 +132,8 @@ output: ./dist/bundle.js
 | :--- | :---: |
 | boolean | false |
 
-If you select `true`, babel-preset-react will be valid.
+If you select `true`, babel-preset-react and react-hot-loader will be valid.  
+Please install `react`, `react-dom`, `react-hot-loader@next`.
 
 ### css
 #### module
