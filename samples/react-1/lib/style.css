@@ -1,0 +1,13 @@
+:root {
+  --main-color: #3498db;
+}
+
+.title {
+  color: var(--main-color);
+}
+
+.js {
+  background: url("../images/js.png");
+  height: 100px;
+  width: 100px;
+}
