@@ -1,1 +1,0 @@
-process.cwd = () => 'test--';
