@@ -14,7 +14,7 @@ sweetpack hides all common settings of webpack and babel, you are not taking the
 ## Sample
 - [common](./samples/common)
 - [react + react-hot-loader + css-modules](./samples/react)
-- [react + react-hot-loader + css-modules + postcss-loader + file-loader]('./samples/react-1')
+- [react + react-hot-loader + css-modules + postcss-loader + file-loader](./samples/react-1)
 - multi
   - [3 input files -> 1 output file](./samples/multi-0)
   - [3 input files -> 3 output files](./samples/multi-1)
@@ -92,7 +92,7 @@ webpack-dev-server(only watch mode)
 ### babel
 - babel-preset-env
 - babel-preset-stage-1
-- babel-preset-react(default: false)
+- babel-preset-react(default: false, becomes effective when `js.react` is `true`)
 - babel-polyfill(default: false)
 
 ## Setting File
