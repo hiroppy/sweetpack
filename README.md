@@ -11,7 +11,7 @@ sweetpack helps you build your environment of webpack and babel.
 If you are building a simple application, let's enjoy using sweetpack!   
 sweetpack hides all common settings of webpack and babel, you are not taking the time to write the configuration.
 
-## Sample
+## Samples
 - [common](./samples/common)
 - [react + react-hot-loader + css-modules](./samples/react)
 - [react + react-hot-loader + css-modules + postcss-loader + file-loader](./samples/react-1)
@@ -55,6 +55,8 @@ css:
 html:
   filename: null
   template: null
+dev:
+  dashboard: true
 ```
 
 ### Watch
@@ -86,6 +88,7 @@ webpack-dev-server(only watch mode)
 #### Plugins
 - html-webpack-plugin
 - dotenv-webpack
+- webpack-dashboard(only watch mode, default: true)
 - babel-minify-webpack-plugin(only production mode)
 - webpack.optimize.OccurrenceOrderPlugin(only production mode)
 - webpack.optimize.AggressiveMergingPlugin(only production mode)
@@ -110,6 +113,8 @@ css:
 html:
   filename: null
   template: null
+dev:
+  dashboard: true
 ```
 
 If the configuration file can not be found, the above default setting is reflected.
@@ -178,3 +183,11 @@ Uses [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
 | Type | Default |
 | :--- | :---: |
 | string | null |
+
+### dev
+### dashboard
+| Type | Default |
+| :--- | :---: |
+| boolean | true |
+
+Uses webpack-dashboard.
