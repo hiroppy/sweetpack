@@ -73,15 +73,21 @@ $ sweetpack watch --display-setting-file
 
 ## Packages Included
 ### webpack
-- webpack
-- webpack-dev-server(only watch mode)
-- babel-minify-webpack-plugin(only production mode)
+webpack-dev-server(only watch mode)
+
+#### Loaders
 - file-loader
 - style-loader
 - css-loader
 - postcss-loader(default: false)
-- html-webpack-plugin
 - react-hot-loader(default: false, becomes effective when `js.react` is `true`)
+
+#### Plugins
+- html-webpack-plugin
+- dotenv-webpack
+- babel-minify-webpack-plugin(only production mode)
+- webpack.optimize.OccurrenceOrderPlugin(only production mode)
+- webpack.optimize.AggressiveMergingPlugin(only production mode)
 
 ### babel
 - babel-preset-env
