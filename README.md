@@ -62,8 +62,9 @@ Start with webpack-dev-server.
 Hot Module Replacement enabled.  
 
 ### Build
-Use babel-minify-webpack-plugin.   
+Use babel-minify-webpack-plugin, OccurrenceOrderPlugin and AggressiveMergingPlugin.   
 Asset files is converted to name with hash.  
+Default output directory is `/dist`.
 
 ## Options
 ### Display Setting File
