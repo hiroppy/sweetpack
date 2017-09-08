@@ -3,7 +3,7 @@
   "author": "abouthiroppy <git@about-hiroppy.com http://about-hiroppy.com",
   "version": "0.5.1",
   "license": "MIT",
-  "description": "a simple version of webpack",
+  "description": "very easy to set up webpack and babel",
   "files": [
     "bin",
     "lib"
@@ -11,7 +11,9 @@
   "keywords": [
     "webpack",
     "babel",
-    "easy"
+    "easy",
+    "setting",
+    "scaffolding"
   ],
   "repository": {
     "url": "git+https://github.com/abouthiroppy/sweetpack.git",
@@ -33,7 +35,7 @@
   "ava": {
     "files": [
       "test/**/*.js",
-			"!test/helper/*.js"
+      "!test/helper/*.js"
     ],
     "tap": true,
     "failFast": true,
