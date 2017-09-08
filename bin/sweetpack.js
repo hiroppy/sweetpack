@@ -3,7 +3,7 @@
 'use strict';
 
 const yargs = require('yargs');
-const { convertYml } = require('../lib/setting-file');
+const { convertYml } = require('../lib/sweetpack/util');
 const packageJson = require('../package.json');
 
 yargs
@@ -36,4 +36,6 @@ ${convertYml()}
 
 const _ = yargs.argv._;
 
-if (_.length === 1) require('../lib/process')(_[0]);
+if (_.length === 1) {
+  require('../lib/process')(_[0]);
+}
