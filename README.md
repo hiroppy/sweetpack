@@ -91,6 +91,7 @@ webpack-dev-server(only watch mode)
 - dotenv-webpack
 - webpack-dashboard(only watch mode, default: true)
 - babel-minify-webpack-plugin(only production mode)
+- clean-webpack-plugin(only production mode)
 - webpack.optimize.OccurrenceOrderPlugin(only production mode)
 - webpack.optimize.AggressiveMergingPlugin(only production mode)
 
