@@ -56,6 +56,7 @@ html:
   filename: null
   template: null
 dev:
+  port: 8080
   dashboard: true
 ```
 
@@ -114,6 +115,7 @@ html:
   filename: null
   template: null
 dev:
+  port: 8080
   dashboard: true
 ```
 
@@ -185,6 +187,13 @@ Uses [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
 | string | null |
 
 ### dev
+### port
+| Type | Default |
+| :--- | :---: |
+| number | 8080 |
+
+Specify the port of webpack-dev-server.
+
 ### dashboard
 | Type | Default |
 | :--- | :---: |
