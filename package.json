@@ -32,7 +32,8 @@
   },
   "ava": {
     "files": [
-      "test/**/*.js"
+      "test/**/*.js",
+			"!test/helper/*.js"
     ],
     "tap": true,
     "failFast": true,
