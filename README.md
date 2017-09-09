@@ -72,12 +72,6 @@ Use babel-minify-webpack-plugin, OccurrenceOrderPlugin and AggressiveMergingPlug
 Asset files is converted to name with hash.  
 Default output directory is `/dist`.
 
-## Options
-### Display Setting File
-```
-$ sweetpack watch --display-setting-file
-```
-
 ## Packages Included
 ### webpack
 webpack-dev-server(only watch mode)

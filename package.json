@@ -3,7 +3,7 @@
   "author": "abouthiroppy <git@about-hiroppy.com http://about-hiroppy.com",
   "version": "0.6.1",
   "license": "MIT",
-  "description": "very easy to set up webpack and babel",
+  "description": "sweetpack helps you configure webpack and babel of your application💪",
   "files": [
     "bin",
     "lib"
@@ -52,6 +52,7 @@
     "babel-preset-stage-1": "^6.24.1",
     "chalk": "^2.1.0",
     "clean-webpack-plugin": "^0.1.16",
+    "cli-table": "^0.3.1",
     "css-loader": "^0.28.7",
     "dotenv-webpack": "^1.5.4",
     "extract-text-webpack-plugin": "^3.0.0",
