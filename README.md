@@ -6,6 +6,15 @@
 [![npm version](https://badge.fury.io/js/sweetpack.svg)](https://badge.fury.io/js/sweetpack)
 [![codecov](https://codecov.io/gh/abouthiroppy/sweetpack/branch/master/graph/badge.svg)](https://codecov.io/gh/abouthiroppy/sweetpack)
 
+## table of contents
+- [What's sweetpack?](#whats-sweetpack)
+- [Samples](#samples)
+- [Usage](#usage)
+- [Command](#command)
+- [Setting File](#setting-file)
+- [Packages Included](#packages-included)
+- [Trouble Shooting](#trouble-shooting)
+
 ## What's sweetpack?
 sweetpack helps you build your environment of webpack and babel.   
 If you are building a simple application, let's enjoy using sweetpack!   
@@ -14,24 +23,23 @@ sweetpack hides all common settings of webpack and babel, you are not taking the
 ## Samples
 - [small](./samples/small)
 - [extract](./samples/extract)
+- [3 input files -> 1 output file](./samples/multi-0)
+- [3 input files -> 3 output files](./samples/multi-1)
 - [react + react-hot-loader + css-modules](./samples/react)
 - [react + react-hot-loader + css-modules + postcss-loader + file-loader](./samples/react-1)
-- multi
-  - [3 input files -> 1 output file](./samples/multi-0)
-  - [3 input files -> 3 output files](./samples/multi-1)
 - [enable all options](./samples/all)
 
-## Install
+## Usage
+### Install
 ```
 $ npm install sweetpack --save-dev
 ```
 
-## Usage
 ```
-$ npx sweetpack <command> <options>
+$ npx sweetpack <command>
 ```
 
-Recommend to write to package.json as a task.
+Recommend to write to `package.json` as a task.
 
 ```json
 {
@@ -43,8 +51,11 @@ Recommend to write to package.json as a task.
 ```
 
 ## Command
-### Init
-Create `.sweetpack.yml` as an init file.
+sweetpack has `init`, `watch`, `build` commands.
+
+### sweetpack init
+Create `.sweetpack.yml` as an init file.  
+The file with default settings is generated.
 
 ```yaml
 entry: src/index.js
@@ -64,45 +75,22 @@ prod:
   extract: false
 ```
 
-### Watch
+### sweetpack watch
 Start with webpack-dev-server.  
 Hot Module Replacement enabled.  
 
-### Build
+[Activated Plugins](#watch)
+
+### sweetpack build
 Use babel-minify-webpack-plugin, OccurrenceOrderPlugin and AggressiveMergingPlugin.   
 Asset files is converted to name with hash.  
 Default output directory is `/dist`.
 
-## Packages Included
-### webpack
-webpack-dev-server(only watch mode)
-
-#### Loaders
-- file-loader
-- style-loader
-- css-loader
-- postcss-loader(default: false)
-- react-hot-loader(default: false, becomes effective when `js.react` is `true`)
-
-#### Plugins
-- html-webpack-plugin
-- dotenv-webpack
-- webpack-dashboard(only watch mode, default: true)
-- babel-minify-webpack-plugin(only production mode)
-- clean-webpack-plugin(only production mode)
-- extract-text-webpack-plugin(only production mode, default: false)
-- webpack.optimize.OccurrenceOrderPlugin(only production mode)
-- webpack.optimize.AggressiveMergingPlugin(only production mode)
-
-### babel
-- babel-preset-env
-- babel-preset-stage-1
-- babel-preset-react(default: false, becomes effective when `js.react` is `true`)
-- babel-preset-react-optimize(default: false, becomes effective when `js.react` is `true`)
-- babel-polyfill(default: false)
+[Activated Plugins](#build)
 
 ## Setting File
-File name is `.sweetpack.yml`.
+File name is `.sweetpack.yml`.  
+Please set at the root of the project.
 
 ```yaml
 entry: ./src/index.js
@@ -126,86 +114,193 @@ If the configuration file can not be found, the above default setting is reflect
 
 ### entry
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | string &#124; Object &#124; Array&lt;string&gt; | `./src/index.js` |
 
-It can be set just like webpack.  
-If you want to bundle multiple files, please refer to [Sample](./samples).
+It can be set just like webpack. see [Entry Points](https://webpack.js.org/concepts/entry-points/)  
+
+```yaml
+entry: ./src/index.js # string
+
+entry: # Object
+  a: ./src/a.js
+  b: ./src/b.js
+  c: ./src/c.js
+
+entry: # Array
+  - ./src/a.js
+  - ./src/b.js
+```
 
 
 ### output
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | string | `./dist` |
 
 `output` has the same meaning as `webpack.output.path`.   
-If you specify a file name, sweetpack automatically decomposes it into `path` and `filename`.   
+If specify a file name, sweetpack automatically decomposes it into `path` and `filename`.   
+When `entry` is Object, the file name automatically becomes `[name].js`.  
+In the production environment, the file name is given `[hash]`.
 
-e.g.
 ```yaml
-output: ./dist/bundle.js
+# if `entry` is Object
+# Automatically convert to `[name].js`
+output: dist # -> output.filename is `[name].js`
+
+# else(e.g. string, Array<string>)
+output: dist # -> output.filename is `main.js`
+output: dist/bundle.js # -> output.filename is `bundle.js`
+
 ```
 
 ### js
 #### react
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | boolean | false |
 
-If you select `true`, babel-preset-react and react-hot-loader will be valid.  
+If select `true`, babel-preset-react, react-hot-loader and babel-preset-react-optimize will be valid.  
 Please install `react`, `react-dom`, `react-hot-loader@next`.
+```
+$ npm i react react-dom react-hot-loader@next
+```
 
 ### css
 #### modules
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | boolean | false |
 
-If you select `true`, add module option to css-loader.
+If select `true`, will add module option to css-loader.
 
-Output class name will be changed.  
-development, test, etc... : `[path]__[name]__[local]__[hash:base64:5]`  
-production: `[hash:base64:5]`
+Output class name will be changed by the environment.  
+When `process.env.NODE_ENV` is production, a class name is  `[hash:base64:5]`.  
+In other cases, a class name is `[path]__[name]__[local]__[hash:base64:5]` for make debugging easier.
 
 ### postcss
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | boolean | false |
 
-If you select `true`, added postcss-loader to `module.rules`.  
+If select `true`, will add postcss-loader to `module.rules`.  
 Please add `postcss.config.js` to your project.
+```
+$ touch postcss.config.js
+```
+see [samples/all](https://github.com/abouthiroppy/sweetpack/tree/master/samples/all)
 
 ### html
-Uses [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
+sweetpkack uses [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
 
 #### filename
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | string | null |
 
+The file to write the HTML to.
 
 #### template
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | string | null |
+
+Specify the path of template for the generated HTML.  
+
+see [the template option](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md)
 
 ### dev
 ### port
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | number | 8080 |
 
 Specify the port of webpack-dev-server.
 
 ### dashboard
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | boolean | true |
 
-Uses webpack-dashboard.
+If select `false`, will remove webpack-dashboard at dev.
 
 ### prod
 #### extract
 | Type | Default |
-| :--- | :---: |
+| :--- | :--- |
 | boolean | false |
+
+If select `true`, will use extract-text-webpack-plugin when prod.  
+html, js, css, images, etc are output to `dist` in their respective files.
+
+As you can see,   
+[samples/all#production-build](https://github.com/abouthiroppy/sweetpack/tree/master/samples/all#production-build)
+
+## Packages Included
+### webpack
+- [webpack-dev-server](https://github.com/webpack/webpack-dev-server)(only watch mode)
+
+#### Loaders
+- [file-loader](https://github.com/webpack-contrib/file-loader)
+- [style-loader](https://github.com/webpack-contrib/style-loader)
+- [css-loader](https://github.com/webpack-contrib/css-loader)
+- [postcss-loader](https://github.com/postcss/postcss-loader)(default: false)
+- [react-hot-loader](https://github.com/gaearon/react-hot-loader)(default: false, becomes effective when `js.react` is `true`)
+
+#### Plugins
+- [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
+- [dotenv-webpack](https://github.com/mrsteele/dotenv-webpack)
+- [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)(only watch mode, default: `true`)
+- [babel-minify-webpack-plugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin)(only production mode)
+- [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)(only production mode)
+- [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)(only production mode, default: false)
+- webpack.optimize.OccurrenceOrderPlugin(only production mode)
+- webpack.optimize.AggressiveMergingPlugin(only production mode)
+
+### babel
+- [babel-preset-env](https://github.com/babel/babel-preset-env)
+- [babel-preset-stage-1](https://github.com/babel/babel/tree/master/packages/babel-preset-stage-1)
+- [babel-preset-react](https://github.com/babel/babel/tree/master/packages/babel-preset-react)(default: `false`, becomes effective when `js.react` is `true`)
+- [babel-preset-react-optimize](https://github.com/thejameskyle/babel-react-optimize)(default: `false`, becomes effective when `js.react` is `true`)
+- [babel-polyfill](https://github.com/babel/babel/tree/master/packages/babel-polyfill)(default: `false`)
+
+### Activated Plugins
+#### Common
+- html-webpack-plugin
+  - option: `html.filename`, `html.template`
+- dotenv-webpack
+- file-loader
+  - corresponding extension: `png`, `jpg`, `gif`, `svg`, `woff2`
+- style-loader
+- css-loader
+  - option: `css.modules`(for css modules)
+  - corresponding extension: `css`, `scss`
+- postcss-loader(default: `false`)
+  - option: `css.postcss`
+    - postcss.config.js is required if enabled
+- babel-preset-react(default: `false`)
+  - option: `js.react`
+- babel-preset-env
+- babel-preset-stage-1
+
+#### Watch
+- webpack-dev-server
+- webpack-dashboard(default: `true`)
+- react-hot-loader(default: `false`)
+  - option: `js.react`
+
+#### Build
+- clean-webpack-plugin
+- babel-minify-webpack-plugin
+- babel-preset-react-optimize(default: `false`)
+  - option: `js.react`
+- extract-text-webpack-plugin(default: `false`)
+  - option: `prod.extract`
+- webpack.optimize.OccurrenceOrderPlugin
+- webpack.optimize.AggressiveMergingPlugin
+
+## Trouble Shooting
+### When `Cannot read property 'profile' of null` happens when executed.
+If `js.react` is `true`, check the version of react-hot-laoder.   
+sweetpack only supports versions above 3 so please install `react-hot-loader@next`.
+
