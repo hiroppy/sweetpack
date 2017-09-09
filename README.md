@@ -13,6 +13,7 @@ sweetpack hides all common settings of webpack and babel, you are not taking the
 
 ## Samples
 - [common](./samples/common)
+- [extract](./samples/extract)
 - [react + react-hot-loader + css-modules](./samples/react)
 - [react + react-hot-loader + css-modules + postcss-loader + file-loader](./samples/react-1)
 - multi
@@ -58,6 +59,8 @@ html:
 dev:
   port: 8080
   dashboard: true
+prod:
+  extract: false
 ```
 
 ### Watch
@@ -92,6 +95,7 @@ webpack-dev-server(only watch mode)
 - webpack-dashboard(only watch mode, default: true)
 - babel-minify-webpack-plugin(only production mode)
 - clean-webpack-plugin(only production mode)
+- extract-text-webpack-plugin(only production mode, default: false)
 - webpack.optimize.OccurrenceOrderPlugin(only production mode)
 - webpack.optimize.AggressiveMergingPlugin(only production mode)
 
@@ -118,6 +122,8 @@ html:
 dev:
   port: 8080
   dashboard: true
+prod:
+  extract: false
 ```
 
 If the configuration file can not be found, the above default setting is reflected.
@@ -201,3 +207,9 @@ Specify the port of webpack-dev-server.
 | boolean | true |
 
 Uses webpack-dashboard.
+
+### prod
+#### extract
+| Type | Default |
+| :--- | :---: |
+| boolean | false |
