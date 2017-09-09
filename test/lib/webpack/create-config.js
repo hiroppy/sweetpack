@@ -35,6 +35,9 @@ test('returns the combined webpack config', (t) => {
       },
       dev: {
         dashbaord: false
+      },
+      prod: {
+        extract: true
       }
     }
   };
