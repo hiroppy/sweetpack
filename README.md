@@ -103,6 +103,7 @@ webpack-dev-server(only watch mode)
 - babel-preset-env
 - babel-preset-stage-1
 - babel-preset-react(default: false, becomes effective when `js.react` is `true`)
+- babel-preset-react-optimize(default: false, becomes effective when `js.react` is `true`)
 - babel-polyfill(default: false)
 
 ## Setting File
