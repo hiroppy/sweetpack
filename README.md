@@ -69,9 +69,11 @@ html:
   filename: null
   template: null
 dev:
+  env: null
   port: 8080
   dashboard: true
 prod:
+  env: null
   extract: false
 ```
 
@@ -104,9 +106,11 @@ html:
   filename: null
   template: null
 dev:
+  env: null
   port: 8080
   dashboard: true
 prod:
+  env: null
   extract: false
 ```
 
@@ -210,6 +214,10 @@ Specify the path of template for the generated HTML.
 see [the template option](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md)
 
 ### dev
+#### env
+Specify `.env`'s path.  
+If not specified, will look for `.env`.  
+
 ### port
 | Type | Default |
 | :--- | :--- |
@@ -225,6 +233,10 @@ Specify the port of webpack-dev-server.
 If select `false`, will remove webpack-dashboard at dev.
 
 ### prod
+#### env
+Specify `.env`'s path.
+If not specified, will look for `.env`.  
+
 #### extract
 | Type | Default |
 | :--- | :--- |
@@ -269,6 +281,7 @@ As you can see,
 - html-webpack-plugin
   - option: `html.filename`, `html.template`
 - dotenv-webpack
+  - can specify each file of dev and prod, if not specified, will look for `.env`
 - file-loader
   - corresponding extension: `png`, `jpg`, `gif`, `svg`, `woff2`
 - style-loader

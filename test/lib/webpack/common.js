@@ -7,6 +7,7 @@ function createbase() {
     js  : {},
     css : {},
     html: {},
+    dev : {},
     prod: {}
   };
 };
@@ -74,5 +75,21 @@ test('returns the config when prod - css.postcss, prod.extract', (t) => {
   config.prod.extract = false;
   t.snapshot(replacePath(common(config)));
 
+  process.env.NODE_ENV = undefined;
+});
+
+test('returns the config - dev.env, prod.env', (t) => {
+  const config = createbase();
+
+  config.dev.env = './test.env';
+  t.snapshot(replacePath(common(config)));
+  process.env.NODE_ENV = 'production';
+  t.snapshot(replacePath(common(config)));
+  process.env.NODE_ENV = undefined;
+
+  config.dev.env = '';
+  t.snapshot(replacePath(common(config)));
+  process.env.NODE_ENV = 'production';
+  t.snapshot(replacePath(common(config)));
   process.env.NODE_ENV = undefined;
 });

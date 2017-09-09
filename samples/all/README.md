@@ -8,18 +8,20 @@ entry:
   carbon: ./src/carbon.js
 output: out # It is not necessary to specify a file name when multiple files are output. Automatically convert to [name].js
 js:
-    react: true
+  react: true
 css:
-    modules: true
-    postcss: true
+  modules: true
+  postcss: true
 html:
-    filename: index.html
-    template: ./index.ejs
+  filename: index.html
+  template: ./index.ejs
 dev:
-    port: 8080
-    dashboard: true
+  env: .env.dev
+  port: 8080
+  dashboard: true
 prod:
-    extract: true
+  env: .env.prod
+  extract: true
 ```
 
 ## Preparation
