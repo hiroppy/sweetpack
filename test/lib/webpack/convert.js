@@ -98,6 +98,29 @@ test('returns converted data when the entry is Object', (t) => {
   takeSnapshots(t, config);
 });
 
+test('returns converted data when the entry is Object and add dummy name to output', (t) => {
+  const config = {
+    webpack: {
+      entry: {
+        a: 'a.js',
+        b: 'b.js',
+        c: 'c.js'
+      },
+      output   : 'test/dist/dummy.js',
+      devServer: {
+        port: 1234
+      }
+    },
+    sweetpack: {
+      js: {
+        react: false
+      }
+    }
+  };
+
+  takeSnapshots(t, config);
+});
+
 test('returns converted data when dist does not have .js', (t) => {
   const config = {
     webpack: {
