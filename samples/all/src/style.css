@@ -1,0 +1,17 @@
+:root {
+  --argon: red;
+  --boron: cyan;
+  --carbon: green;
+}
+
+.argon {
+  color: var(--argon);
+}
+
+.boron {
+  color: var(--boron);
+}
+
+.carbon {
+  color: var(--carbon);
+}

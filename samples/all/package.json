@@ -1,0 +1,21 @@
+{
+  "name": "all",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ../../bin/sweetpack.js watch",
+    "build": "NODE_ENV=production node ../../bin/sweetpack.js build"
+  },
+  "author": "abouthiroppy <git@about-hiroppy.com> (http://about-hiroppy.com)",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "^3.0.0-beta.7"
+  },
+  "devDependencies": {
+    "postcss-cssnext": "^3.0.2"
+  }
+}

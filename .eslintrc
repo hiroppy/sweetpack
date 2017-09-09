@@ -2,7 +2,8 @@
   "rules": {
     "no-console": 0,
     "require-jsdoc": 0,
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "react/prop-types": 0
   },
   "env": {
     "node": true,

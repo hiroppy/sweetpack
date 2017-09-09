@@ -12,13 +12,14 @@ If you are building a simple application, let's enjoy using sweetpack!
 sweetpack hides all common settings of webpack and babel, you are not taking the time to write the configuration.
 
 ## Samples
-- [common](./samples/common)
+- [small](./samples/small)
 - [extract](./samples/extract)
 - [react + react-hot-loader + css-modules](./samples/react)
 - [react + react-hot-loader + css-modules + postcss-loader + file-loader](./samples/react-1)
 - multi
   - [3 input files -> 1 output file](./samples/multi-0)
   - [3 input files -> 3 output files](./samples/multi-1)
+- [enable all options](./samples/all)
 
 ## Install
 ```
