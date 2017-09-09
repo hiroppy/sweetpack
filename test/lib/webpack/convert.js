@@ -2,8 +2,21 @@ import test from 'ava';
 import replacePath from '../../helper/replace-path';
 import convert from '../../../lib/webpack/convert';
 
+function takeSnapshots(t, config) {
+  t.snapshot(replacePath(convert('watch', config)));
+  t.snapshot(replacePath(convert('build', config)));
+
+  process.env.NODE_ENV = 'production';
+  t.snapshot(replacePath(convert('watch', config)));
+  t.snapshot(replacePath(convert('build', config)));
+}
+
 test.afterEach(() => {
   process.env.NODE_ENV = undefined;
+});
+
+test('returns converted data when config is empty', (t) => {
+  takeSnapshots(t, {});
 });
 
 test('returns converted data when config does not have entry', (t) => {
@@ -21,17 +34,7 @@ test('returns converted data when config does not have entry', (t) => {
     }
   };
 
-  t.snapshot(replacePath(convert(config)));
-
-  process.env.NODE_ENV = 'production';
-  t.snapshot(replacePath(convert(config)));
-});
-
-test('returns converted data when config is empty', (t) => {
-  t.snapshot(replacePath(convert()));
-
-  process.env.NODE_ENV = 'production';
-  t.snapshot(replacePath(convert()));
+  takeSnapshots(t, config);
 });
 
 test('returns converted data when the entry array is one', (t) => {
@@ -50,10 +53,7 @@ test('returns converted data when the entry array is one', (t) => {
     }
   };
 
-  t.snapshot(replacePath(convert(config)));
-
-  process.env.NODE_ENV = 'production';
-  t.snapshot(replacePath(convert(config)));
+  takeSnapshots(t, config);
 });
 
 test('returns converted data when the entry array is plural', (t) => {
@@ -72,10 +72,7 @@ test('returns converted data when the entry array is plural', (t) => {
     }
   };
 
-  t.snapshot(replacePath(convert(config)));
-
-  process.env.NODE_ENV = 'production';
-  t.snapshot(replacePath(convert(config)));
+  takeSnapshots(t, config);
 });
 
 test('returns converted data when the entry is Object', (t) => {
@@ -98,10 +95,7 @@ test('returns converted data when the entry is Object', (t) => {
     }
   };
 
-  t.snapshot(replacePath(convert(config)));
-
-  process.env.NODE_ENV = 'production';
-  t.snapshot(replacePath(convert(config)));
+  takeSnapshots(t, config);
 });
 
 test('returns converted data when dist does not have .js', (t) => {
@@ -120,10 +114,7 @@ test('returns converted data when dist does not have .js', (t) => {
     }
   };
 
-  t.snapshot(replacePath(convert(config)));
-
-  process.env.NODE_ENV = 'production';
-  t.snapshot(replacePath(convert(config)));
+  takeSnapshots(t, config);
 });
 
 test('returns converted data when dist has .js', (t) => {
@@ -142,10 +133,7 @@ test('returns converted data when dist has .js', (t) => {
     }
   };
 
-  t.snapshot(replacePath(convert(config)));
-
-  process.env.NODE_ENV = 'production';
-  t.snapshot(replacePath(convert(config)));
+  takeSnapshots(t, config);
 });
 
 test('returns converted data when js.react is true and entry is Array', (t) => {
@@ -164,10 +152,7 @@ test('returns converted data when js.react is true and entry is Array', (t) => {
     }
   };
 
-  t.snapshot(replacePath(convert(config)));
-
-  process.env.NODE_ENV = 'production';
-  t.snapshot(replacePath(convert(config)));
+  takeSnapshots(t, config);
 });
 
 test('returns converted data when js.react is true and entry is Object', (t) => {
@@ -189,8 +174,5 @@ test('returns converted data when js.react is true and entry is Object', (t) => 
     }
   };
 
-  t.snapshot(replacePath(convert(config)));
-
-  process.env.NODE_ENV = 'production';
-  t.snapshot(replacePath(convert(config)));
+  takeSnapshots(t, config);
 });
