@@ -1,6 +1,8 @@
+// @flow
+
 import styles from './style.css';
 
-const elm = document.createElement('h2');
+const elm: HTMLElement = document.createElement('h2');
 
 elm.className = styles.boron;
 
@@ -10,5 +12,5 @@ elm.innerHTML = `
   className: ${styles.boron}
 `;
 
-const rootEl = document.getElementById('boron');
-rootEl.append(elm);
+const rootEl: HTMLElement | null = document.getElementById('boron');
+if (rootEl) rootEl.append(elm);

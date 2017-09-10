@@ -4,6 +4,7 @@ entry:
   carbon: ./src/carbon.js
 output: out # It is not necessary to specify a file name when multiple files are output. Automatically convert to [name].js
 js:
+  flow: true
   react: true
 css:
   modules: true
