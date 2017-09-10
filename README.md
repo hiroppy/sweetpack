@@ -19,7 +19,7 @@
 [dependencyci-image]: https://img.shields.io/badge/Dependency%20CI-passing-brightgreen.svg?style=flat-square
 [dependencyci-url]: https://dependencyci.com/github/abouthiroppy/sweetpack
 
-## table of contents
+## Table of Contents
 - [What's sweetpack?](#whats-sweetpack)
 - [Samples](#samples)
 - [Usage](#usage)
@@ -275,6 +275,7 @@ As you can see,
 #### Plugins
 - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
 - [dotenv-webpack](https://github.com/mrsteele/dotenv-webpack)
+- [case-sensitive-paths-webpack-plugin](https://github.com/Urthen/case-sensitive-paths-webpack-plugin)
 - [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)(only watch mode, default: `true`)
 - [babel-minify-webpack-plugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin)(only production mode)
 - [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)(only production mode)
@@ -295,6 +296,7 @@ As you can see,
   - option: `html.filename`, `html.template`
 - dotenv-webpack
   - can specify each file of dev and prod, if not specified, will look for `.env`
+- case-sensitive-paths-webpack-plugin
 - file-loader
   - corresponding extension: `png`, `jpg`, `gif`, `svg`, `woff2`
 - style-loader
