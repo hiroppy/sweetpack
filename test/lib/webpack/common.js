@@ -12,6 +12,16 @@ function createbase() {
   };
 };
 
+test('returns the config - js.flow', (t) => {
+  const config = createbase();
+
+  config.js.flow = true;
+  t.snapshot(replacePath(common(config)));
+
+  config.js.flow = false;
+  t.snapshot(replacePath(common(config)));
+});
+
 test('returns the config - js.react', (t) => {
   const config = createbase();
 
