@@ -2,9 +2,22 @@
   <h1>sweetpack</h1>
 </div>
 
-[![Build Status](https://travis-ci.org/abouthiroppy/sweetpack.svg)](https://travis-ci.org/abouthiroppy/sweetpack)
-[![npm version](https://badge.fury.io/js/sweetpack.svg)](https://badge.fury.io/js/sweetpack)
-[![codecov](https://codecov.io/gh/abouthiroppy/sweetpack/branch/master/graph/badge.svg)](https://codecov.io/gh/abouthiroppy/sweetpack)
+[![NPM][npm-image]][npm-url]
+[![Travis][travis-image]][travis-url]
+[![Codecov][codecov-image]][codecov-url]
+[![David][david-image]][david-url]
+[![Dependencyci][dependencyci-image]][dependencyci-url]
+
+[npm-image]: https://img.shields.io/npm/v/sweetpack.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/sweetpack
+[travis-image]: https://img.shields.io/travis/abouthiroppy/sweetpack.svg?style=flat-square
+[travis-url]: https://travis-ci.org/abouthiroppy/sweetpack
+[codecov-image]: https://img.shields.io/codecov/c/github/abouthiroppy/sweetpack/master.svg?style=flat-square
+[codecov-url]: https://codecov.io/gh/abouthiroppy/sweetpack
+[david-image]: https://img.shields.io/david/abouthiroppy/sweetpack.svg?style=flat-square
+[david-url]: https://david-dm.org/abouthiroppy/sweetpack
+[dependencyci-image]: https://img.shields.io/badge/Dependency%20CI-passing-brightgreen.svg?style=flat-square
+[dependencyci-url]: https://dependencyci.com/github/abouthiroppy/sweetpack
 
 ## table of contents
 - [What's sweetpack?](#whats-sweetpack)
@@ -316,4 +329,3 @@ As you can see,
 ### `Cannot read property 'profile' of null` happens when executed.
 If `js.react` is `true`, check the version of react-hot-laoder.   
 sweetpack only supports versions above 3 so please install `react-hot-loader@next`.
-
