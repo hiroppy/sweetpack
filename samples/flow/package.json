@@ -1,0 +1,20 @@
+{
+  "name": "0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ../../bin/sweetpack.js watch",
+    "build": "node ../../bin/sweetpack.js build"
+  },
+  "author": "abouthiroppy <git@about-hiroppy.com> (http://about-hiroppy.com)",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "flow-bin": "^0.54.1"
+  }
+}
