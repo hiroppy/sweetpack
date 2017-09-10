@@ -74,6 +74,7 @@ The file with default settings is generated.
 entry: src/index.js
 output: dist
 js:
+  flow: false
   react: false
 css:
   modules: false
@@ -111,6 +112,7 @@ Please set at the root of the project.
 entry: ./src/index.js
 output: ./dist
 js:
+  flow: false
   react: false
 css:
   modules: false
@@ -172,6 +174,13 @@ output: dist/bundle.js # -> output.filename is `bundle.js`
 ```
 
 ### js
+#### flow
+| Type | Default |
+| :--- | :--- |
+| boolean | false |
+
+If select `true`, babel-preset-flow and flow-status-webpack-plugin will be valid.  
+
 #### react
 | Type | Default |
 | :--- | :--- |
@@ -277,26 +286,32 @@ As you can see,
 - [dotenv-webpack](https://github.com/mrsteele/dotenv-webpack)
 - [case-sensitive-paths-webpack-plugin](https://github.com/Urthen/case-sensitive-paths-webpack-plugin)
 - [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)(only watch mode, default: `true`)
+- [flow-status-webpack-plugin](https://github.com/diegodurli/flow-status-webpack-plugin)(default: `false`)
 - [babel-minify-webpack-plugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin)(only production mode)
 - [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)(only production mode)
-- [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)(only production mode, default: false)
+- [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)(only production mode, default: `false`)
+- webpack.NoEmitOnErrorsPlugin
 - webpack.optimize.OccurrenceOrderPlugin(only production mode)
 - webpack.optimize.AggressiveMergingPlugin(only production mode)
 
 ### babel
 - [babel-preset-env](https://github.com/babel/babel-preset-env)
 - [babel-preset-stage-1](https://github.com/babel/babel/tree/master/packages/babel-preset-stage-1)
+- [babel-preset-flow](https://github.com/babel/babel/tree/master/packages/babel-preset-flow)(default: `false`, becomes effective when `js.flow` is `true`)
 - [babel-preset-react](https://github.com/babel/babel/tree/master/packages/babel-preset-react)(default: `false`, becomes effective when `js.react` is `true`)
 - [babel-preset-react-optimize](https://github.com/thejameskyle/babel-react-optimize)(default: `false`, becomes effective when `js.react` is `true`)
 - [babel-polyfill](https://github.com/babel/babel/tree/master/packages/babel-polyfill)(default: `false`)
 
 ### Activated Plugins
 #### Common
+- webpack.NoEmitOnErrorsPlugin
 - html-webpack-plugin
   - option: `html.filename`, `html.template`
 - dotenv-webpack
   - can specify each file of dev and prod, if not specified, will look for `.env`
 - case-sensitive-paths-webpack-plugin
+- flow-status-webpack-plugin(default: `false`)
+  - option: `js.flow`
 - file-loader
   - corresponding extension: `png`, `jpg`, `gif`, `svg`, `woff2`
 - style-loader
@@ -306,10 +321,12 @@ As you can see,
 - postcss-loader(default: `false`)
   - option: `css.postcss`
     - postcss.config.js is required if enabled
-- babel-preset-react(default: `false`)
-  - option: `js.react`
 - babel-preset-env
 - babel-preset-stage-1
+- babel-preset-flow(default: `false`)
+  - option: `js.flow`
+- babel-preset-react(default: `false`)
+  - option: `js.react`
 
 #### Watch
 - webpack-dev-server
