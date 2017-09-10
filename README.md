@@ -179,7 +179,11 @@ output: dist/bundle.js # -> output.filename is `bundle.js`
 | :--- | :--- |
 | boolean | false |
 
-If select `true`, babel-preset-flow and flow-status-webpack-plugin will be valid.  
+If select `true`, babel-preset-flow and flow-status-webpack-plugin will be valid.   
+Please install `flow-bin`.
+```
+$ npm i flow-bin --save-dev
+```
 
 #### react
 | Type | Default |
@@ -290,7 +294,6 @@ As you can see,
 - [babel-minify-webpack-plugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin)(only production mode)
 - [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)(only production mode)
 - [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)(only production mode, default: `false`)
-- webpack.NoEmitOnErrorsPlugin
 - webpack.optimize.OccurrenceOrderPlugin(only production mode)
 - webpack.optimize.AggressiveMergingPlugin(only production mode)
 
@@ -304,7 +307,6 @@ As you can see,
 
 ### Activated Plugins
 #### Common
-- webpack.NoEmitOnErrorsPlugin
 - html-webpack-plugin
   - option: `html.filename`, `html.template`
 - dotenv-webpack
