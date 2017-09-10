@@ -38,6 +38,7 @@ sweetpack hides all common settings of webpack and babel, you are not taking the
 - [extract](./samples/extract)
 - [3 input files -> 1 output file](./samples/multi-0)
 - [3 input files -> 3 output files](./samples/multi-1)
+- [flow](./samples/flow)
 - [react + react-hot-loader + css-modules](./samples/react)
 - [react + react-hot-loader + css-modules + postcss-loader + file-loader](./samples/react-1)
 - [enable all options](./samples/all)

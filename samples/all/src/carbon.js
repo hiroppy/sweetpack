@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import js from '../images/js.png';
@@ -6,7 +8,6 @@ import styles from './style.css';
 
 const rootEl = document.getElementById('carbon');
 
-console.log(js);
 const render = () => {
   ReactDOM.render(
     <div>
