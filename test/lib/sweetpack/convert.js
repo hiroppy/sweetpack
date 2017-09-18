@@ -10,6 +10,7 @@ test('returns the combined object when obj is setted', (t) => {
     entry : 'test',
     output: 'test',
     js    : {
+      flow : true,
       react: true
     },
     css: {
@@ -21,8 +22,14 @@ test('returns the combined object when obj is setted', (t) => {
       tempalte: 'test--'
     },
     dev: {
+      env      : '.env.dev',
       port     : 1234,
       dashboard: false // because the default is true
+    },
+    prod: {
+      env    : './.env.prod',
+      url    : true,
+      extract: true
     }
   };
 

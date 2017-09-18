@@ -89,6 +89,7 @@ dev:
   dashboard: true
 prod:
   env: null
+  url: false
   extract: false
 ```
 
@@ -127,6 +128,7 @@ dev:
   dashboard: true
 prod:
   env: null
+  url: false
   extract: false
 ```
 
@@ -264,6 +266,9 @@ If select `false`, will remove webpack-dashboard at dev.
 Specify `.env`'s path.
 If not specified, will look for `.env`.  
 
+#### url
+If select `true`, will use url-loader when prod.
+
 #### extract
 | Type | Default |
 | :--- | :--- |
@@ -281,10 +286,11 @@ As you can see,
 
 #### Loaders
 - [file-loader](https://github.com/webpack-contrib/file-loader)
+- [url-loader](https://github.com/webpack-contrib/url-loader)(default: `false`)
 - [style-loader](https://github.com/webpack-contrib/style-loader)
 - [css-loader](https://github.com/webpack-contrib/css-loader)
-- [postcss-loader](https://github.com/postcss/postcss-loader)(default: false)
-- [react-hot-loader](https://github.com/gaearon/react-hot-loader)(default: false, becomes effective when `js.react` is `true`)
+- [postcss-loader](https://github.com/postcss/postcss-loader)(default: `false`)
+- [react-hot-loader](https://github.com/gaearon/react-hot-loader)(default: `false`, becomes effective when `js.react` is `true`)
 
 #### Plugins
 - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
@@ -338,6 +344,7 @@ As you can see,
   - option: `js.react`
 
 #### Build
+- url-loader(default: `false`)
 - clean-webpack-plugin
 - babel-minify-webpack-plugin
 - babel-preset-react-optimize(default: `false`)
