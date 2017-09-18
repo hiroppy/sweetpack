@@ -79,6 +79,7 @@
     "eslint": "^4.6.1",
     "eslint-config-sky": "^1.6.2",
     "nyc": "^11.2.1",
-    "pify": "^3.0.0"
+    "pify": "^3.0.0",
+    "url-loader": "^0.5.9"
   }
 }

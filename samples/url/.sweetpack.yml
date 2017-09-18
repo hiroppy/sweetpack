@@ -1,0 +1,4 @@
+entry: ./lib/index.js
+output: dist/bundle.js
+prod:
+  url: true

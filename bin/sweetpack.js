@@ -2,9 +2,9 @@
 
 'use strict';
 
-const yargs = require('yargs');
+const yargs          = require('yargs');
 const { convertYml } = require('../lib/sweetpack/util');
-const packageJson = require('../package.json');
+const packageJson    = require('../package.json');
 
 yargs
   .usage(`
@@ -24,12 +24,7 @@ ${convertYml()}
   })
   .command({
     command: 'init',
-    desc   : 'Create .sweetpack.yml as init file'
-  })
-  .options({
-    'display-config': {
-      describe: 'Show webpack-config.js'
-    }
+    desc   : 'Create .sweetpack.yml as an init file'
   })
   .help()
   .argv;

@@ -21,6 +21,7 @@ dev:
   dashboard: true
 prod:
   env: .env.prod
+  url: true
   extract: true
 ```
 
