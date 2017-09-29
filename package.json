@@ -1,7 +1,7 @@
 {
   "name": "sweetpack",
   "author": "abouthiroppy <git@about-hiroppy.com http://about-hiroppy.com",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "license": "MIT",
   "description": "sweetpack helps eliminate time to suffer from webpack and babel😋",
   "files": [
