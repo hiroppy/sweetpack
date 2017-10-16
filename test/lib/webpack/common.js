@@ -119,3 +119,19 @@ test('returns the config - prod.url', (t) => {
   t.snapshot(replacePath(common(config)));
   process.env.NODE_ENV = undefined;
 });
+
+test('returns the config - dev.analyzer', (t) => {
+  const config = createbase();
+
+  config.dev.analyzer = false;
+  t.snapshot(replacePath(common(config)));
+  process.env.NODE_ENV = 'production';
+  t.snapshot(replacePath(common(config)));
+  process.env.NODE_ENV = undefined;
+
+  config.dev.analyzer = true;
+  t.snapshot(replacePath(common(config)));
+  process.env.NODE_ENV = 'production';
+  t.snapshot(replacePath(common(config)));
+  process.env.NODE_ENV = undefined;
+});

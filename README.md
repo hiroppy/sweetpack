@@ -86,6 +86,7 @@ html:
 dev:
   env: null
   port: 8080
+  analyzer: false
   dashboard: true
 prod:
   env: null
@@ -125,6 +126,7 @@ html:
 dev:
   env: null
   port: 8080
+  analyzer: false
   dashboard: true
 prod:
   env: null
@@ -254,6 +256,12 @@ If not specified, will look for `.env`.
 
 Specify the port of webpack-dev-server.
 
+### analyzer
+| Type | Default |
+| :--- | :--- |
+| boolean | false |
+If select `true`, will use webpack-bundle-analyzer at dev.
+
 ### dashboard
 | Type | Default |
 | :--- | :--- |
@@ -298,6 +306,7 @@ As you can see,
 - [case-sensitive-paths-webpack-plugin](https://github.com/Urthen/case-sensitive-paths-webpack-plugin)
 - [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)(only watch mode, default: `true`)
 - [flow-status-webpack-plugin](https://github.com/diegodurli/flow-status-webpack-plugin)(default: `false`)
+- [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)(default: `false`)
 - [babel-minify-webpack-plugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin)(only production mode)
 - [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)(only production mode)
 - [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)(only production mode, default: `false`)
@@ -342,6 +351,7 @@ As you can see,
 - webpack-dashboard(default: `true`)
 - react-hot-loader(default: `false`)
   - option: `js.react`
+- webpack-bundle-analyzer(default: `false`)
 
 #### Build
 - url-loader(default: `false`)
