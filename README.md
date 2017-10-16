@@ -260,6 +260,7 @@ Specify the port of webpack-dev-server.
 | Type | Default |
 | :--- | :--- |
 | boolean | false |
+
 If select `true`, will use webpack-bundle-analyzer at dev.
 
 ### dashboard
