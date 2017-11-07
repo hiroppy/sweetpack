@@ -295,6 +295,7 @@ As you can see,
 
 #### Loaders
 - [file-loader](https://github.com/webpack-contrib/file-loader)
+- [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader)
 - [url-loader](https://github.com/webpack-contrib/url-loader)(default: `false`)
 - [style-loader](https://github.com/webpack-contrib/style-loader)
 - [css-loader](https://github.com/webpack-contrib/css-loader)
@@ -333,6 +334,7 @@ As you can see,
   - option: `js.flow`
 - file-loader
   - corresponding extension: `png`, `jpg`, `gif`, `svg`, `woff2`
+- image-webpack-loader
 - style-loader
 - css-loader
   - option: `css.modules`(for css modules)
